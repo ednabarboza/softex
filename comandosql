@@ -1,0 +1,21 @@
+#Questão: De acordo com as tabelas, programe um código SQL para gerar a estrutura do banco de dados dessa biblioteca. 
+Siga as instruções: 
+
+#Para criação do bando:
+CREATE DATABASE exercicio1
+
+#Para criação das tabelas
+CREATE TABLE aluno ();
+
+#1:  inclua a coluna DATA_NASCIMENTO na tabela ALUNO do tipo string e de tamanho 10 caracteres; 
+ALTER TABLE aluno ADD data_nasc VARCHAR(10);
+
+#2. altere a coluna TELEFONE para CONTATO e seu tipo de dado para string;
+ALTER TABLE aluno CHANGE COLUMN telefone contato VARCHAR(20) not null;
+
+#3. inclua o campo ISBN na tabela LIVRO, com tamanho de 13 caracteres do tipo inteiro;
+ALTER TABLE livro ADD ISBN INT(13);
+
+#4. remova o campo ISBN da tabela LIVRO. 
+ALTER TABLE livro DROP COLUMN ISBN;
+
