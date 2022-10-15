@@ -1,0 +1,4 @@
+id,nome,matricula,Email,Endereco,Contato,data_nascimento
+1,"João Carlos",1234,JCarlos@gmail.com,"Rua Treze de Maio",78254489,NULL
+2,"José Victor",2345,Jvictor@gmail.com,"Rua da Saudade",78256589,NULL
+3,"Paulo André",3456,Pandr@gmail.com,"Rua do Sol",78254495,NULL
