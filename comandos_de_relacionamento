@@ -1,0 +1,37 @@
+📚 Questão: Desenvolva um banco de dados que relacione tabelas através de chaves estrangeiras ou nomes de colunas iguais. 
+Após isso, realize todos os comandos Joins estudados.
+
+# PARA O LEFT JOIN
+
+SELECT a.nome, b.produto
+FROM cliente as A
+LEFT JOIN compra as B
+                on a.nome = b.produto
+
+
+# PARA O RIGHT JOIN
+
+SELECT a.nome, b.produto
+FROM cliente as A
+RIGHT JOIN compra as B
+                on a.nome = b.produto
+
+
+# PARA O FULL JOIN
+
+SELECT a.nome, b.produto
+FROM cliente as A
+LEFT JOIN compra as B
+                on a.nome = b.produto
+UNION
+SELECT a.nome, b.produto
+FROM cliente as A
+RIGHT JOIN compra as B
+                on a.nome = b.produto
+
+# PARA O INNER JOIN
+
+SELECT a.nome, b.nome
+FROM cliente as A
+INNER JOIN compra as B
+                on a.nome = b.nome
