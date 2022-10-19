@@ -1,0 +1,36 @@
+📚 Questão: Você deve criar uma tabela para executar uma trigger que relacione algum comando, como: insert, select, delete ou update.
+
+#Criar o banco de dados
+CREATE DATABASE exercicio3
+
+#Selecionar o banco de dados dentro do ambiente MySQL
+USE exercicio3
+
+#Criar tabela
+CREATE TABLE produto (
+cód_produto INT NOT NULL auto_increment,
+nome_produto VARCHAR(200) NULL, 
+quantidade DECIMAL (10,2),
+preco_unit DECIMAL(10,2) NULL,
+preco_total DECIMAL(10,2) NULL,
+PRIMARY KEY (cód_produto)
+)
+
+#Criar trigger
+CREATE TRIGGER tr_preco_final BEFORE INSERT
+ON produto 
+FOR EACH ROW
+SET NEW.preco_total = (NEW.quantidade * NEW.preco_unit);
+
+#Inserir valores na tabela
+INSERT INTO produto (nome_produto, preco_unit, quantidade)
+VALUES ("Cerveja Brahma 1L", 62.9, 10)
+
+INSERT INTO produto (nome_produto, preco_unit, quantidade)
+VALUES ("Cerveja Skol 1L", 59.3, 20)
+
+INSERT INTO produto (nome_produto, preco_unit, quantidade)
+VALUES ("Cerveja Skol latão 473 ml", 34.4, 30)
+
+#Mostrar a tabela criada
+SELECT * FROM produto 
