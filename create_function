@@ -1,0 +1,18 @@
+# Questão: Crie uma função que some todos os clientes cadastrados em uma loja durante um dia.
+
+DELIMITER $$
+CREATE FUNCTION sum_client()
+RETURNS DECIMAL(10,2)
+CONTAINS SQL
+BEGIN
+	DECLARE result DECIMAL(10,2);
+  SET result = (
+    SELECT SUM(client_balance) AS TOTAL 
+    FROM client 
+    GROUP BY STATUS 
+    HAVING STATUS = TRUE;
+  ) 
+  RETURN result;
+END
+$$ DELIMITER ;
+
