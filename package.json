@@ -1,0 +1,19 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "\"meu primeiro projeto\"",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ednabarboza/softex.git"
+  },
+  "author": "\"edna barboza\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ednabarboza/softex/issues"
+  },
+  "homepage": "https://github.com/ednabarboza/softex#readme"
+}
