@@ -1,0 +1,49 @@
+<!-- A soap request -->
+<!-- Referência: https://www.w3schools.com/xml/xml_soap.asp --> 
+<!-- É feita uma consulta pelo CPF de um cliente e o servidor responde com nome, endereço e número de telefone desse cliente -->
+
+POST /InStock HTTP/1.1
+Host: www.example.org
+Content-Type: application/soap+xml; charset=utf-8
+Content-Length: nnn
+
+<?xml version="1.0"?>
+
+<soap:Envelope
+xmlns:soap="http://www.w3.org/2003/05/soap-envelope/"
+soap:encodingStyle="http://www.w3.org/2003/05/soap-encoding">
+
+<soap:Body xmlns:m="http://www.example.org/stock">
+  <m:GetClientCpf>
+    <m:cpf>1654613216</m:cpf>
+  </m:GetClientCpf>
+
+</soap:Body>
+
+</soap:Envelope>
+
+<!-- A soap response -->
+HTTP/1.1 200 OK
+Content-Type: application/soap+xml; charset=utf-8
+Content-Length: nnn
+
+<?xml version="1.0"?>
+
+<soap:Envelope
+xmlns:soap="http://www.w3.org/2003/05/soap-envelope/"
+soap:encodingStyle="http://www.w3.org/2003/05/soap-encoding">
+
+<soap:Body xmlns:m="http://www.example.org/stock">
+  <m:GetClientName>
+    <m:name>Paulo Henrique da Silva</m:name>
+  </m:GetClientName>
+
+  <m:GetClientAddress>
+    <m:address>Rua do Sol</m:address>
+  </m:GetClientAddress>
+
+  <m:GetClientPhoneNumber>
+    <m:phoneNumber>32244473</m:phoneNumber>
+  </m:GetClientPhoneNumber>
+
+</soap:Envelope>
